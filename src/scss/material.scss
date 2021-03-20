@@ -1,0 +1,33 @@
+.mat-tab-header {
+  background-color: $color-main;
+}
+
+.mat-tab-labels {
+  justify-content: center;
+}
+
+.mat-ripple.mat-tab-label {
+  border: 2px solid $color-light-main;
+  border-bottom: none;
+
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.mat-tab-label {
+  color: $color-text-dark-main;
+
+  background-color: $color-light-main;
+}
+
+.mat-ripple.mat-tab-label:nth-child(odd) {
+  border-right: none;
+}
+
+.mat-tab-label-container .mat-ink-bar {
+  height: 4px;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar {
+  background-color: $color-light-secondary;
+}

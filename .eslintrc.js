@@ -1,3 +1,5 @@
+const { off } = require("process");
+
 module.exports = {
   root: true,
   overrides: [
@@ -19,6 +21,7 @@ module.exports = {
       rules: {
         "object-curly-spacing": ["error", "always"],
         "space-infix-ops": ["error", {"int32Hint": false}],
+        "no-underscore-dangle": "off",
         "import/no-unresolved": "off",
         "import/prefer-default-export": "off",
         "class-methods-use-this": "off",

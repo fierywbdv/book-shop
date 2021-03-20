@@ -1,0 +1,43 @@
+@import 'src/scss/mixins.scss';
+@import 'src/scss/variables.scss';
+
+.cart-item-card__content {
+  padding-bottom: 0;
+}
+
+.cart-item-card__count {
+  color: $color-text-dark-main;
+  text-align: center;
+}
+
+.card__buttons__left-block {
+  @include flex;
+  align-items: baseline;
+}
+
+.cart-item-card__buttons {
+  @include flex;
+  flex-direction: column;
+  padding-top: 0;
+}
+
+.cart-item-card__button {
+  min-width: 40px;
+
+  background-color: $color-main;
+}
+
+.cart-input-item-count {
+  width: 50px;
+  margin: 5px 10px;
+  padding: 10px;
+
+  color: $color-text-dark-main;
+  font-weight: bold;
+  text-align: center;
+
+  border-color: $color-main;
+  border-radius: 10px;
+
+  outline: none;
+}

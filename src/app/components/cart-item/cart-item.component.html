@@ -1,0 +1,58 @@
+<mat-card class="card cart-item-card" >
+  <mat-card-header class="card__header cart-item-card__header">
+    <mat-card-title class="card__title cart-item-card__title">
+      {{ cartItem.name }}
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content class="card__content cart-item-card__content">
+    <p class="card__content__description cart-item-card__content__description">
+      {{ cartItem.description }}
+    </p>
+    <p class="card__content__category cart-item-card__content__category">
+      {{ cartItem.category | titlecase }}
+    </p>
+    <hr>
+    <p class="card__price cart-item-card__price">
+      <span class="card__price__label cart-item-card__price__label">Price: </span>
+      <span class="card__price__content cart-item-card__price__content">{{ cartItem.price | currency }}</span>
+    </p>
+    <p class="card__price cart-item-card__count">
+      <span class="card__count__label cart-item-card__count__label">Count: </span>
+    </p>
+  </mat-card-content>
+  
+  <mat-card-actions class="card__buttons cart-item-card__buttons">
+    <div class="card__buttons__left-block">
+      <button 
+        class="card__button cart-item-card__button"
+        aria-label="Decrease product count button"
+        mat-mini-fab
+        (click)="decreaseCartItemCount()"
+      >
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+      <input 
+        class="input cart-input-item-count" 
+        [ngModel]="cartItem.count" 
+        readonly
+      >
+      <button 
+        class="card__button cart-item-card__button"
+        aria-label="Increase product count button"
+        mat-mini-fab
+        (click)="increaseCartItemCount()"
+      >
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
+    <button 
+      class="card__button cart-item-card__button"
+      aria-label="Delete product button"
+      mat-mini-fab
+      (click)="deleteCartItem()"
+    >
+      <mat-icon>garbage</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

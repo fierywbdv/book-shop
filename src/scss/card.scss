@@ -1,0 +1,74 @@
+mat-card.card {
+  width: 200px;
+  margin: 10px;
+  padding: 0;
+  padding-bottom: 10px;
+
+  color: $color-text-light-secondary;
+  background-color: $color-light-main;
+}
+
+.card {
+  .card__header {
+    justify-content: center;
+    align-items: center;
+  
+    color: $color-light-main;
+  
+    background-color: $color-main;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .card__title {
+    @include flex-centered;
+    height: 70px;
+    
+    text-align: center;
+    
+    overflow: hidden;
+  }
+  
+  .card__header .card__title {
+    margin: 0;
+  }
+  
+  .card__content {
+    margin: 0;
+    padding: 10px;
+  }
+  
+  .card__content__description {
+    height: 85px;
+    
+    text-align: justify;
+    
+    overflow: hidden;
+  }
+  
+  .card__content__category,
+  .card__price {
+    color: $color-attention-main;
+    text-align: right;
+  }
+  
+  .card__price__content {
+    font-weight: bold;
+  }
+  
+  .card__buttons {
+    @include flex-centered;
+  }
+  
+  .card__button {
+    min-width: 100px;
+    margin-bottom: 10px;
+  
+    color: $color-text-light-main;
+    background-color: $color-light-secondary;
+  }
+  
+  mat-card-actions.card__buttons:last-child {
+    margin: 0;
+  }
+}

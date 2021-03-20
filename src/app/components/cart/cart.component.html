@@ -1,0 +1,5 @@
+<ul class="cart__list list" *ngIf="cartList">
+  <li class="cart__list__item" *ngFor="let cartItem of cartList">
+    <app-cart-item [cartItem]="cartItem" (deleteCartItemEvent)="onDeleteCartItem($event)"></app-cart-item>
+  </li>
+</ul>

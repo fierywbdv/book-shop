@@ -1,0 +1,34 @@
+<mat-card class="card book-card" >
+  <mat-card-header class="card__header book-card__header">
+    <mat-card-title class="card__title book-card__title">
+      {{ bookItem.name }}
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content class="card__content book-card__content">
+    <p class="card__content__description book-card__content__description">
+      {{ bookItem.description }}
+    </p>
+    <hr>
+    <p class="card__content__category book-card__content__category">
+      {{ bookItem.category | titlecase }}
+    </p>
+    <p class="card__date book-card__date">
+      <span class="card__date__label book-card__date__label">Create date: </span>
+      <span class="card__date__content book-card__date__content">{{ bookItem.createDate | date }}</span>
+    </p>
+    <p class="card__price book-card__price">
+      <span class="card__price__label book-card__price__label">Price: </span>
+      <span class="card__price__content book-card__price__content">{{ bookItem.price | currency }}</span>
+    </p>
+  </mat-card-content>
+  
+  <mat-card-actions class="card__buttons book-card__buttons">
+    <button 
+      class="card__button book-card__button card__button_buy book-card__button_buy"
+      [disabled]="!bookItem.isAvailable"
+      (click)="addBookToCart(bookItem)"
+      mat-button
+    >Buy</button>
+  </mat-card-actions>
+</mat-card>
