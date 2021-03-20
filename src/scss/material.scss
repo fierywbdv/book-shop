@@ -20,6 +20,10 @@
   background-color: $color-light-main;
 }
 
+.mat-tab-label.mat-tab-label-active {
+  opacity: 1;
+}
+
 .mat-ripple.mat-tab-label:nth-child(odd) {
   border-right: none;
 }

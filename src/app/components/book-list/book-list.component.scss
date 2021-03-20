@@ -1,0 +1,6 @@
+@import 'src/scss/mixins.scss';
+
+.book__list {
+  @include flex;
+  flex-wrap: wrap;
+}

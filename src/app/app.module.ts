@@ -11,15 +11,32 @@ import { MatBadgeModule } from '@angular/material/badge';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BookComponent } from './components/book/book.component';
-import { CartComponent } from './components/cart/cart.component';
+import { BookItemComponent } from './components/book-item/book-item.component';
+import { BookListComponent } from './components/book-list/book-list.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { CartListComponent } from './components/cart-list/cart-list.component';
+import { BookShopComponent } from './components/book-shop/book-shop.component';
+import { AboutComponent } from './components/about/about.component';
+import { BooksService } from './services/books/books.service';
+import { CartService } from './services/cart/cart.service';
+import { LocalStorageService } from './services/local-storage/local-storage.service';
+import { ConfigOptionsService } from './services/config-options/config-options.service';
+import { ConstantsService, APP_DESCRIPTION } from './services/constants/constants.service';
+import { GeneratorService, StringGeneratorService } from './services/generator/generator.service';
+import { GeneratorFactory } from './common/helper';
 
 @NgModule({
-  declarations: [AppComponent, BookComponent, CartComponent, CartItemComponent],
+  declarations: [
+    AppComponent,
+    BookItemComponent,
+    BookShopComponent,
+    CartItemComponent,
+    CartListComponent,
+    BookListComponent,
+    AboutComponent,
+  ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
     MatTabsModule,
@@ -27,8 +44,17 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
     MatButtonModule,
     MatIconModule,
     MatBadgeModule,
+    AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    BooksService,
+    CartService,
+    { provide: LocalStorageService, useClass: LocalStorageService },
+    ConfigOptionsService,
+    GeneratorService,
+    { provide: ConstantsService, useValue: APP_DESCRIPTION },
+    { provide: StringGeneratorService, useFactory: GeneratorFactory, deps: [GeneratorService] },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

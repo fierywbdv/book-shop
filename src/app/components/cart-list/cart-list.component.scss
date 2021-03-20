@@ -1,0 +1,29 @@
+@import 'src/scss/mixins.scss';
+@import 'src/scss/variables.scss';
+
+.cart__description {
+  @include flex-centered;
+
+  color: $color-attention-main;
+  font-weight: bold;
+}
+
+.cart__description__total-sum {
+  margin-right: 10px;
+}
+
+.cart__description__total-sum__value,
+.cart__description__total-quantity__value {
+  display: inline-block;
+  padding: 5px;
+
+  color: $color-text-light-main;
+
+  background-color: $color-main;
+  border-radius: 10px;
+}
+
+.cart__list {
+  @include flex;
+  flex-wrap: wrap;
+}

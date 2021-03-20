@@ -1,12 +1,12 @@
-import { BookModel, BookCategories } from '../models/book.model';
+import { BookItemModel, BookItemCategories } from '../models/book-item.model';
 
-export const mockBooksList: BookModel[] = [
+export const mockBooksList: BookItemModel[] = [
   {
     name: 'Sherlock Holmes',
     description: `Sherlock Holmes is a fictional private detective
       created by British author Sir Arthur Conan Doyl`,
     price: 300,
-    category: BookCategories.detective,
+    category: BookItemCategories.detective,
     createDate: 1613916337459,
     isAvailable: true,
   },
@@ -15,15 +15,15 @@ export const mockBooksList: BookModel[] = [
     description: `Jonathan Hickman/'s X-Men reboot should be the brightest
       day of the mutant race - but the original X-Men are breaking slowly apart`,
     price: 15,
-    category: BookCategories.comix,
+    category: BookItemCategories.comix,
     createDate: 1613910000000,
-    isAvailable: false,
+    isAvailable: true,
   },
   {
     name: 'Gone With the Wind',
     description: `Gone with the Wind is a 1936 American epic historical novel by Margaret Mitchell`,
     price: 241,
-    category: BookCategories.novel,
+    category: BookItemCategories.novel,
     createDate: 1613500000000,
     isAvailable: true,
   },
@@ -31,7 +31,7 @@ export const mockBooksList: BookModel[] = [
     name: 'My New Book',
     description: `It is my new book, not ready yet...`,
     price: 1000,
-    category: BookCategories.science,
+    category: BookItemCategories.science,
     createDate: Date.now(),
     isAvailable: false,
   },
@@ -45,7 +45,7 @@ export const mockBooksList: BookModel[] = [
       The Lord of the Rings is one of the best-selling books ever written, 
       with over 150 million copies sold`,
     price: 745.45,
-    category: BookCategories.fantasy,
+    category: BookItemCategories.fantasy,
     createDate: 1610200000000,
     isAvailable: true,
   },

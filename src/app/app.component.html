@@ -3,37 +3,4 @@
     <h1 class="header__title" #appTitle></h1>
   </a>
 </header>
-
-<mat-tab-group>
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <span class="mat-tab-label">
-        <mat-icon class="mat-tab-label__icon">auto_stories</mat-icon>
-        Book shop
-      </span>
-    </ng-template>
-    <div>
-      <ul class="book__list list">
-        <li class="book__list__item" *ngFor="let bookItem of booksList">
-          <app-book 
-            [bookItem]="bookItem"
-            (addBookToCartEvent)="onAddBookToCart($event)" 
-          >
-          </app-book>
-        </li>
-      </ul>
-    </div>
-  </mat-tab>
-
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <span class="mat-tab-label">
-        <mat-icon class="mat-tab-label__icon" [matBadge]="cartList.length || ''" matBadgeColor="#ff4081">shopping_cart</mat-icon>
-        Cart
-      </span>
-    </ng-template>
-    <div>
-      <app-cart [cartList]="cartList" (deleteCartItemEvent)="onDeleteBookFromCart($event)"></app-cart>
-    </div>
-  </mat-tab>
-</mat-tab-group>
+<app-book-shop></app-book-shop>

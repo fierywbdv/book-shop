@@ -28,31 +28,32 @@
         class="card__button cart-item-card__button"
         aria-label="Decrease product count button"
         mat-mini-fab
-        (click)="decreaseCartItemCount()"
+        (click)="onDecreaseButtonClick()"
       >
         <mat-icon>chevron_left</mat-icon>
       </button>
       <input 
-        class="input cart-input-item-count" 
-        [ngModel]="cartItem.count" 
+        class="input cart-input-item-count"
+        [ngModel]="cartItem.count"
+        (mousewheel)="onMouseWheelOverCartItemCountInput($event)"
         readonly
       >
       <button 
         class="card__button cart-item-card__button"
         aria-label="Increase product count button"
         mat-mini-fab
-        (click)="increaseCartItemCount()"
+        (click)="onIncreaseButtonClick()"
       >
         <mat-icon>chevron_right</mat-icon>
       </button>
     </div>
     <button 
-      class="card__button cart-item-card__button"
+      class="card__button cart-item-card__button cart-item-card__button_delete"
       aria-label="Delete product button"
       mat-mini-fab
-      (click)="deleteCartItem()"
+      (click)="onDeleteButtonClick()"
     >
-      <mat-icon>garbage</mat-icon>
+      <mat-icon>delete_forever</mat-icon>
     </button>
   </mat-card-actions>
 </mat-card>
