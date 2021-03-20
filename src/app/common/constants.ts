@@ -29,3 +29,5 @@ export const MESSAGES = {
     },
   },
 };
+
+export const DEFAULT_BORDER_COLOR = '#ff4081';

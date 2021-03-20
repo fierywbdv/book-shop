@@ -9,6 +9,8 @@ import { CartService } from '@cart/services/cart/cart.service';
   styleUrls: ['./cart-list.component.scss'],
 })
 export class CartListComponent {
+  isCartListNotEmpty = false;
+
   get cartList(): CartItemModel[] {
     return this.cartService.cartProduct;
   }
@@ -18,6 +20,7 @@ export class CartListComponent {
   }
 
   get cartTotalQuantity(): number {
+    this.isCartListNotEmpty = Boolean(this.cartService.totalQuantity);
     return this.cartService.totalQuantity;
   }
 

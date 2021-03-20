@@ -12,5 +12,6 @@
 }
 
 .mat-tab-group {
+  min-height: calc(100vh - 97px);
   background-color: $color-bg-light-main;
 }

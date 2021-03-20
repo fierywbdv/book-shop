@@ -9,8 +9,14 @@
   </span>
 </p>
 
-<ul class="cart__list list" *ngIf="cartList">
+<ul class="cart__list list" *ngIf="isCartListNotEmpty; else emptyCart">
   <li class="cart__list__item" *ngFor="let cartItem of cartList; trackBy: trackFunction">
     <app-cart-item [cartItem]="cartItem"></app-cart-item>
   </li>
 </ul>
+
+<ng-template #emptyCart>
+  <p class="cart__description cart__description_empty">
+    There are no products in your cart
+  </p>
+</ng-template>

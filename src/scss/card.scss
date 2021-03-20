@@ -8,6 +8,14 @@ mat-card.card {
   background-color: $color-light-main;
 }
 
+mat-card.hovered {
+  background-color: $color-hover;
+}
+
+mat-card.card.shadowed {
+  box-shadow: $card-hovered-shadow;
+}
+
 .card {
   .card__header {
     justify-content: center;

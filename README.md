@@ -65,3 +65,11 @@ The app will automatically start with eslint check and open in browser if you ru
       • `OrdersModule`,
       • `SharedModule` (то, что много раз используется: компоненты, директивы, пайпы)
     2. Экспортируйте из `SharedModule` следующие модули: `CommonModule`, `OrdersModule`. Используйте `SharedModule`, `BooksModule`, `CartModule`, а модуль `CommonModule`, `OrdersModule` уберите из импорта, если они там присутствуют.
+
+### Branch "task-directives" ([link to PR#5](https://github.com/Musmen/book-shop/pull/5)):
+  - ##### По заданию ["task-directives"](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/angular-new/angular-directives.md)
+    1. Создать массив из нескольких `BookComponents`. Создать компонент `BooksListComponent`. Полученный массив книг необходимо отобразить на странице c помощью встроенной директивы `\*ngFor`.
+    2. Создать массив приобритенных книг из нескольких `CartItemComponent`. Создать компонент `CartListComponent`, который должен отображать список приобритенных книг. Кроме списка купленных товаров, необходимо отображать количество купленных товаров и общую сумму. Полученный массив приобретенных книг необходимо отобразить на странице c помощью встроенной директивы `\*ngFor`. Использовать директиву `\*ngIf + else` для отображения `CartComponent`, если корзина не пустая. Если корзина пустая отображать другой альтернативный блок (или другой компонент, например `Empty`) с сообщением о пустой корзине.
+    3. Создать собственную директиву, которая будет изменять фон товара в корзине (`CartItemComponent`) при наведении мышки на него. Попробовать использовать различные подходы и декораторы, такие как `@HostBinding`, `@HostListener`.
+    4. В любом удобном Вам компоненте применить директивы `ngClass` или `ngStyle`.
+    5. Напишите директиву `shared/directives/<directive-name>`, которая добавляет обработчик события `click` к хост элементу. Клик изменяет размер шрифта элемента и рамку у компонента или элемента. Добавьте `@Input()` с цветом для директивы. Используйте `ElementRef` + `Renderer2`.
