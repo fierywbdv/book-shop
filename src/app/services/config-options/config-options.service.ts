@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-
 import { DEFAULT_CONFIG_OPTIONS } from 'src/app/common/constants';
+
 import { ConfigOptionsModel } from 'src/app/models/config-options.model';
 
 @Injectable()
