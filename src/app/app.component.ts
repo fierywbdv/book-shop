@@ -45,6 +45,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     const purshachedCartItemIndex = this.cartList.findIndex(
       (cartItem) => cartItem.name === bookItem.name,
     );
+
     if (purshachedCartItemIndex !== -1) {
       this.cartList[purshachedCartItemIndex] = { ...this.cartList[purshachedCartItemIndex] };
       this.cartList[purshachedCartItemIndex].count += 1;
