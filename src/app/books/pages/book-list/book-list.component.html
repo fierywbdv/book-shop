@@ -1,5 +1,5 @@
 <ul class="book__list list">
-  <li class="book__list__item" *ngFor="let bookItem of booksList; trackBy: trackFunction">
+  <li class="book__list__item" *ngFor="let bookItem of booksList$ | async; trackBy: trackFunction">
     <app-book-item [bookItem]="bookItem"></app-book-item>
   </li>
 </ul>

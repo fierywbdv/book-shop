@@ -1,16 +1,40 @@
-<p class="cart__description">
-  <span class="cart__description__total-sum">
-    <span class="cart__description__total-sum__title">Total Sum: </span>
-    <span class="cart__description__total-sum__value">{{ cartTotalSum | currency }}</span>
-  </span>
-  <span class="cart__description__total-quantity">
-    <span class="cart__description__total-quantity__title">Total Quantity: </span>
-    <span class="cart__description__total-quantity__value">{{ cartTotalQuantity }}</span>
-  </span>
-</p>
+<div class="cart__header">
+  <p class="cart__description">
+    <span class="cart__description__total-sum">
+      <span class="cart__description__total-sum__title">Total Sum: </span>
+      <span class="cart__description__total-sum__value">{{ cartTotalSum | currency }}</span>
+    </span>
+    <span class="cart__description__total-quantity">
+      <span class="cart__description__total-quantity__title">Total Quantity: </span>
+      <span class="cart__description__total-quantity__value">{{ cartTotalQuantity }}</span>
+    </span>
+  </p>
+
+  <mat-form-field class="cart__order-by-block order-by-block" appearance="fill">
+    <mat-label class="order-by-block__label">Order by</mat-label>
+    <mat-select class="order-by-block__select" [(value)]="orderByProperty">
+      <mat-option 
+        class="order-by-block__option" 
+        *ngFor="let orderByProperty of orderByPropertyList" 
+        [value]="orderByProperty"
+      >
+        {{orderByProperty}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button
+    [class.increasing]="!isOrderByDeacreasing"
+    class="sorting-direction-button"
+    (click)="isOrderByDeacreasing = !isOrderByDeacreasing"
+    mat-button
+  >
+    <mat-icon class="sorting-direction-icon">low_priority</mat-icon>
+  </button>
+</div>
 
 <ul class="cart__list list" *ngIf="isCartListNotEmpty; else emptyCart">
-  <li class="cart__list__item" *ngFor="let cartItem of cartList; trackBy: trackFunction">
+  <li class="cart__list__item" *ngFor="let cartItem of cartList | orderBy: orderByProperty : isOrderByDeacreasing">
     <app-cart-item [cartItem]="cartItem"></app-cart-item>
   </li>
 </ul>

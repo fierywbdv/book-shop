@@ -31,3 +31,5 @@ export const MESSAGES = {
 };
 
 export const DEFAULT_BORDER_COLOR = '#ff4081';
+
+export const ORDER_BY_PROPERTY_LIST = ['price', 'count', 'name'];

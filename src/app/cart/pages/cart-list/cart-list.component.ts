@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import { ORDER_BY_PROPERTY_LIST } from '@app/common/constants';
 import { CartItemModel } from '@cart/models/cart-item.model';
 import { CartService } from '@cart/services/cart/cart.service';
 
@@ -10,6 +11,12 @@ import { CartService } from '@cart/services/cart/cart.service';
 })
 export class CartListComponent {
   isCartListNotEmpty = false;
+
+  orderByPropertyList = ORDER_BY_PROPERTY_LIST;
+
+  orderByProperty = '';
+
+  isOrderByDeacreasing = true;
 
   get cartList(): CartItemModel[] {
     return this.cartService.cartProduct;
@@ -25,8 +32,4 @@ export class CartListComponent {
   }
 
   constructor(private cartService: CartService) {}
-
-  trackFunction(index, item) {
-    return item ? item.name : null;
-  }
 }

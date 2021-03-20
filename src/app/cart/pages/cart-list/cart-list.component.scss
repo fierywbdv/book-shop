@@ -1,18 +1,60 @@
 @import 'src/scss/mixins.scss';
 @import 'src/scss/variables.scss';
 
+.cart__header {
+  @include flex;
+}
+
 .cart__description {
   @include flex-centered;
+}
 
+mat-form-field.order-by-block mat-label.order-by-block__label,
+mat-form-field.order-by-block mat-select.order-by-block__select,
+.cart__description {
   color: $color-attention-main;
   font-weight: bold;
 }
+
+.order-by-block__option {
+  text-transform: capitalize;
+}
+
+.sorting-direction-button {
+  align-self: center;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  margin-left: 10px;
+  padding: 5px;
+  padding-top: 3px;
+
+  color: $color-attention-main;
+  border-radius: 50%;
+
+  box-shadow: $button-shadow;
+}
+
+.sorting-direction-icon {
+  width: 30px;
+  height: 30px;
+
+  font-size: 30px;
+
+  transition: transform 0.6s;
+}
+
+.increasing .sorting-direction-icon{
+  transform: rotateX(-180deg);
+}   
 
 .cart__description_empty {
   color: $color-text-dark-main;
 }
 
-.cart__description__total-sum {
+.cart__description__total-sum,
+.cart__description__total-quantity {
   margin-right: 10px;
 }
 

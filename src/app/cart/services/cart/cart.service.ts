@@ -29,7 +29,6 @@ export class CartService {
       this.cartProduct.push(purshachedCartItem);
     }
 
-    this.cartProduct = [...this.cartProduct];
     this._updateCartData();
   }
 
@@ -80,6 +79,7 @@ export class CartService {
   }
 
   private _updateCartData(): void {
+    this.cartProduct = [...this.cartProduct];
     this.totalSum = 0;
     this.totalQuantity = 0;
     this.cartProduct.forEach((carItem: CartItemModel) => {

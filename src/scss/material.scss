@@ -35,3 +35,40 @@
 .mat-tab-group.mat-primary .mat-ink-bar {
   background-color: $color-light-secondary;
 }
+
+.mat-form-field-wrapper {
+  width: 100px;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple,
+.mat-form-field-appearance-fill .mat-form-field-underline::before {
+  background-color: $color-light-secondary;
+}
+
+.mat-select-value,
+.mat-form-field.mat-primary .mat-select-arrow,
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: $color-attention-main;
+}
+
+.mat-select-min-line {
+  text-transform: capitalize;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-infix {
+  padding: 0.7em 0 .75em 0;
+}
+
+.mat-select-panel {
+  background-color: $color-main;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: $color-attention-main;
+  font-weight: bold;
+}
+
+.mat-option:hover:not(.mat-option-disabled),
+.mat-option:focus:not(.mat-option-disabled) {
+  background: #ffffff3d
+}

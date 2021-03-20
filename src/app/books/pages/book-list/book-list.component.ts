@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
+import { Observable } from 'rxjs';
+
 import { BookItemModel } from '@books/models/book-item.model';
 import { BooksService } from '@books/services/books/books.service';
 
@@ -10,12 +12,12 @@ import { BooksService } from '@books/services/books/books.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BookListComponent implements OnInit {
-  booksList: BookItemModel[];
+  booksList$: Observable<BookItemModel[]>;
 
   constructor(private bookService: BooksService) {}
 
   ngOnInit(): void {
-    this.booksList = this.bookService.getBooks();
+    this.booksList$ = this.bookService.getBooks();
   }
 
   trackFunction(index, item) {
