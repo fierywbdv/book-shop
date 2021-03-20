@@ -1,4 +1,4 @@
-import { ConfigOptionsModel } from '../models/config-options.model';
+import { ConfigOptionsModel } from '@core/models/config-options.model';
 
 export const APP_TITLE = 'book shop';
 

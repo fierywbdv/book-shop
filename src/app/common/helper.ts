@@ -1,5 +1,5 @@
+import { GeneratorService } from '@core/services/generator/generator.service';
 import { ALPHABET_FOR_STRING_GENERATOR } from './constants';
-import { GeneratorService } from '../services/generator/generator.service';
 
 export const randomStringGenerator: (n: number) => string = (n: number) =>
   new Array(n)

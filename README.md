@@ -55,3 +55,13 @@ The app will automatically start with eslint check and open in browser if you ru
     5. Создайте сервис `ConstantsService` _(core/services/constant.service.ts)_, в виде готового литерала объекта, например _{ App: "TaskManager", Ver: "1.0" }_. Зарегистрируйте его, используя `useValue`.
     6. Создайте сервис `GeneratorService` _(core/services/generator.ts)_, который должен генерировать случайную последовательность символов длины n из набора _a-z, A-Z, 0-9_. Создайте функцию `GeneratorFactory(n: number)`, которая будет предоставлять сгенерированную строку, используя `GeneratorService`. Зарегистрируйте `GeneratorFactory` используя `useFactory`.
     7. Создайте демо-компонент `AboutComponent` _(layout/components/about.component.ts)_ и внедрите перечисленные выше сервисы. Используйте декоратор `@Optional()`.
+
+### Branch "task-modules" ([link to PR#4](https://github.com/Musmen/book-shop/pull/4)):
+  - ##### По заданию ["task-modules"](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/angular-new/angular-modules.md)
+    1. Разбить приложение на несколько модулей:
+      • `AppModule`,
+      • `CartModule`,
+      • `BooksModule`,
+      • `OrdersModule`,
+      • `SharedModule` (то, что много раз используется: компоненты, директивы, пайпы)
+    2. Экспортируйте из `SharedModule` следующие модули: `CommonModule`, `OrdersModule`. Используйте `SharedModule`, `BooksModule`, `CartModule`, а модуль `CommonModule`, `OrdersModule` уберите из импорта, если они там присутствуют.

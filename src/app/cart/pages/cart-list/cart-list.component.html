@@ -1,0 +1,16 @@
+<p class="cart__description">
+  <span class="cart__description__total-sum">
+    <span class="cart__description__total-sum__title">Total Sum: </span>
+    <span class="cart__description__total-sum__value">{{ cartTotalSum | currency }}</span>
+  </span>
+  <span class="cart__description__total-quantity">
+    <span class="cart__description__total-quantity__title">Total Quantity: </span>
+    <span class="cart__description__total-quantity__value">{{ cartTotalQuantity }}</span>
+  </span>
+</p>
+
+<ul class="cart__list list" *ngIf="cartList">
+  <li class="cart__list__item" *ngFor="let cartItem of cartList; trackBy: trackFunction">
+    <app-cart-item [cartItem]="cartItem"></app-cart-item>
+  </li>
+</ul>

@@ -1,0 +1,31 @@
+<mat-tab-group>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <span class="mat-tab-label">
+        <mat-icon class="mat-tab-label__icon">auto_stories</mat-icon>
+        Book shop
+      </span>
+    </ng-template>
+    <div>
+      <app-book-list></app-book-list>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <span class="mat-tab-label">
+        <mat-icon 
+          class="mat-tab-label__icon" 
+          [matBadge]="cartTotalProducts || ''" 
+        >
+          shopping_cart
+        </mat-icon>
+        Cart
+      </span>
+    </ng-template>
+    
+    <div>
+      <app-cart-list></app-cart-list>
+    </div>
+  </mat-tab>
+</mat-tab-group>

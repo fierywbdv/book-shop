@@ -4,6 +4,16 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@common/*": ["src/app/common/*"],
+      "@material/*": ["src/app/material/*"],
+      "@core/*": ["src/app/core/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@books/*": ["src/app/books/*"],
+      "@cart/*": ["src/app/cart/*"],
+      "@orders/*": ["src/app/orders/*"],
+    },
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
