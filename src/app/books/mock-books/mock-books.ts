@@ -31,7 +31,7 @@ export const mockBooksList: BookItemModel[] = [
     price: 525,
     category: BookItemCategories.fantasy,
     createDate: Date.now(),
-    isAvailable: false,
+    isAvailable: true,
   },
   {
     name: 'The Catcher in the Rye',
